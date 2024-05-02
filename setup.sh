@@ -51,10 +51,10 @@ cd ${git_package_dir}
 
 # Frontend Deployment
 #代码目录
-fronted_code_path=/home/source/lilishop-ui
+fronted_code_path=/home/source/weeesell-ui
 
 cd ${fronted_code_path}
-cp -r ./weeesell-ui/ /home/source/weeesell-ui
+cp -r ./weeesell-ui/ ${fronted_code_path}
 cd ${fronted_code_path}/manager
 yarn install
 yarn build
