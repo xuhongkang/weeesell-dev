@@ -1,10 +1,10 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 8.209.82.119
+ Source Server         : 52.0.215.63
  Source Server Type    : MySQL
  Source Server Version : 80023
- Source Host           : 8.209.82.119:3306
+ Source Host           : 52.0.215.63:3306
  Source Schema         : lilishop
 
  Target Server Type    : MySQL

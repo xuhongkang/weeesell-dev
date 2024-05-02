@@ -1,0 +1,61 @@
+nohup java -Xmx256m -Xms128m -Xss256k  -jar /home/project/api/buyer-api-4.3.jar> /home/project/api/buyer.out  &
+nohup java -Xmx256m -Xms128m -Xss256k  -jar /home/project/api/manager-api-4.3.jar> /home/project/api/manager.out  &
+nohup java -Xmx256m -Xms128m -Xss256k  -jar /home/project/api/common-api-4.3.jar> /home/project/api/common.out  &
+nohup java -Xmx256m -Xms128m -Xss256k  -jar /home/project/api/consumer-4.3.jar> /home/project/api/consumer.out  &
+nohup java -Xmx256m -Xms128m -Xss256k  -jar /home/project/api/im-api-4.3.jar> /home/project/api/im.out  &
+nohup java -Xmx256m -Xms128m -Xss256k  -jar /home/project/api/seller-api-4.3.jar> /home/project/api/seller.out  &
+
+
+
+b22d6be10143   logstash:7.17.6                           "/usr/local/bin/dock…"   About an hour ago   Up About an hour   5044/tcp, 0.0.0.0:4560->4560/tc                                        p, :::4560->4560/tcp, 9600/tcp                                                       logstash
+443ccf2339bf   docker.elastic.co/kibana/kibana:7.17.6    "/bin/tini -- /usr/l…"   About an hour ago   Up About an hour   0.0.0.0:5601->5601/tcp, :::5601                                        ->5601/tcp                                                                           kibana
+b719dc1cf251   apache/rocketmq:4.9.6                     "sh mqbroker -c /opt…"   About an hour ago   Up About an hour   0.0.0.0:10909->10909/tcp, :::10                                        909->10909/tcp, 9876/tcp, 10912/tcp, 0.0.0.0:10911->10911/tcp, :::10911->10911/tcp   rocket-broker
+925e55b9ae88   apacherocketmq/rocketmq-dashboard:1.0.0   "sh -c 'java $JAVA_O…"   About an hour ago   Up About an hour   0.0.0.0:8180->8180/tcp, :::8180                                        ->8180/tcp                                                                           rocket-dashboard
+0aad94815c09   xuxueli/xxl-job-admin:2.3.0               "sh -c 'java -jar $J…"   About an hour ago   Up About an hour   0.0.0.0:9001->9001/tcp, :::9001                                        ->9001/tcp                                                                           xxl-job
+f19c95383c77   apache/rocketmq:4.9.6                     "sh mqnamesrv"           About an hour ago   Up About an hour   10909/tcp, 0.0.0.0:9876->9876/t                                        cp, :::9876->9876/tcp, 10911-10912/tcp                                               rocket-server
+c58d776ac2fb   mysql:8.0.30                              "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:3306->3306/tcp, :::3306                                        ->3306/tcp, 33060/tcp                                                                mysql
+9301b03d1c70   elasticsearch:7.17.6                      "/bin/tini -- /usr/l…"   About an hour ago   Up About an hour   0.0.0.0:9200->9200/tcp, :::9200                                        ->9200/tcp, 0.0.0.0:9300->9300/tcp, :::9300->9300/tcp                                elasticsearch
+1e06db346665   redis:7.0.4                               "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:6379->6379/tcp, :::6379    
+
+
+
+unzip /home/project/ui/dist.zip     -d /home/project/ui/
+unzip /home/source/h5.zip     -d /home/source
+
+用户PC端：https://www.weeesell.com/   13011111111/111111
+用户手机端：https://m-b2b2c.weeesell.com/  
+商户：https://store-b2b2c.weeesell.com   13011111111/111111
+管理端：https://admin-b2b2c.weeesell.com    admin /123456
+
+8.209.82.119
+
+im-api.weeesell.com
+store-api.weeesell.com
+buyer-api.weeesell.com
+admin-api.weeesell.com
+common-api.weeesell.com
+im.weeesell.com
+im-api.weeesell.com
+m-b2b2c.weeesell.com
+store-b2b2c.weeesell.com
+admin-b2b2c.weeesell.com
+pc-b2b2c.weeesell.com
+
+logo
+https://lilishop-oss.oss-cn-beijing.aliyuncs.com/MANAGER//0b8505da93164d6985655bb60c95873c.png
+
+
+INSERT INTO `lilishop`.`li_menu` (`id`, `create_by`, `create_time`, `delete_flag`, `update_by`, `update_time`, `description`, `front_route`, `icon`, `level`, `name`, `parent_id`, `path`, `sort_order`, `title`, `front_component`, `permission`) VALUES (1349247640584085504, 'admin', '2021-01-13 14:51:20', b'0', 'admin', '2021-07-27 16:08:56', 'null', 'sensitive-words/index', 'ios-american-football', 2, 'sensitive-words', '1349237129847005184', 'sensitive-words', 9.00, '自提管理', 'null', '/manager/other/sensitiveWords*');
+INSERT INTO `lilishop`.`li_menu` (`id`, `create_by`, `create_time`, `delete_flag`, `update_by`, `update_time`, `description`, `front_route`, `icon`, `level`, `name`, `parent_id`, `path`, `sort_order`, `title`, `front_component`, `permission`) VALUES (1349246468775239681, 'admin', '2021-01-13 14:46:41', b'0', 'admin', '2021-07-27 16:08:14', 'null', 'shop/shopAddress', 'ios-american-football', 2, 'shop', '1349237129847005184', 'shop', 9.00, '自提管理', 'null', '/manager/shop*');
+
+
+unzip /home/source/h5.zip     -d /home/source/
+
+获取服务器时间
+var now = new Date($.ajax({async: false}).getResponseHeader("Date"));
+
+
+unzip /home/source/lilishop-ui/manager/dist.zip    -d /home/source/lilishop-ui/manager/
+unzip /home/source/lilishop-ui/buyer/dist.zip    -d /home/source/lilishop-ui/buyer/
+unzip /home/source/lilishop-ui/seller/dist.zip    -d /home/source/lilishop-ui/seller/
+new Date();

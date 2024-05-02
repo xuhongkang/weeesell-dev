@@ -17,7 +17,7 @@ export default {
 
       if (document.body.offsetWidth < 876) {
         console.log("手机端")
-        window.location.href = 'https://m-b2b2c.weeesell.com/'
+        window.location.href = 'https://m-b2b2c.weeesell.shop/'
       }
       else{
         this.init();

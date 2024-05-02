@@ -24,7 +24,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://8.209.82.119:8000
+        url: http://52.0.215.63:8000
   cache:
     type: redis
   # Redis
@@ -240,16 +240,16 @@ lili:
     sk: zhNKVrJK6UPOhqIjn8AQvG37b9sz6
   #域名
   domain:
-    pc: http://8.209.82.119:8888
-    wap: http://8.209.82.119:8888
-    seller: http://8.209.82.119:8888
-    admin: http://8.209.82.119:8888
+    pc: http://52.0.215.63:8888
+    wap: http://52.0.215.63:8888
+    seller: http://52.0.215.63:8888
+    admin: http://52.0.215.63:8888
   #api地址
   api:
     buyer: https://z171l91606.51mypc.cn
-    base: http://8.209.82.119:8888
-    manager: http://8.209.82.119:8888
-    seller: http://8.209.82.119:8888
+    base: http://52.0.215.63:8888
+    manager: http://52.0.215.63:8888
+    seller: http://52.0.215.63:8888
 
   # jwt 细节设定
   jwt-setting:
