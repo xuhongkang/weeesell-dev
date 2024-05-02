@@ -15,7 +15,7 @@ mkdir -p /home/source
 docker_code_path=/home/project/docker
 cp -r ./docker ${docker_code_path}
 sudo systemctl start docker
-docker-compose up -d
+sudo docker-compose up -d
 cd ${git_package_dir}
 
 # Backend Deployment
@@ -41,12 +41,12 @@ mv ${backend_code_path}/seller-api/target/seller-api-$version.jar ${backend_run_
 mv ${backend_code_path}/im-api/target/im-api-$version.jar ${backend_run_path}
 cd ${backend_run_path}
 mkdir logs
-nohup java -Xmx256m -Xms128m -Xss256k  -jar manager-api-$version.jar> logs/manager.out  &
-nohup java -Xmx256m -Xms128m -Xss256k  -jar common-api-$version.jar> logs/common.out  &
-nohup java -Xmx256m -Xms128m -Xss256k  -jar buyer-api-$version.jar> logs/buyer.out  &
-nohup java -Xmx256m -Xms128m -Xss256k  -jar consumer-$version.jar> logs/consumer.out  &
-nohup java -Xmx256m -Xms128m -Xss256k  -jar im-api-$version.jar> logs/im.out  &
-nohup java -Xmx256m -Xms128m -Xss256k  -jar seller-api-$version.jar> logs/seller.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar manager-api-$version.jar> logs/manager.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar common-api-$version.jar> logs/common.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar buyer-api-$version.jar> logs/buyer.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar consumer-$version.jar> logs/consumer.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar im-api-$version.jar> logs/im.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar seller-api-$version.jar> logs/seller.out  &
 cd ${git_package_dir}
 
 # Frontend Deployment
