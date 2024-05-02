@@ -1,4 +1,5 @@
 git_package_dir=$(pwd)
+version=4.3
 
 # Dependencies
 sudo yum install -y git
@@ -22,7 +23,6 @@ cd ${git_package_dir}
 backend_code_path=/home/project/weeesell
 backend_run_path=/home/project/api
 cp -r ./weeesell/ ${backend_code_path}
-mkdir -p ${backend_code_path}
 mkdir -p ${backend_run_path}
 cd ${backend_code_path}
 mvn clean install -DskipTests
