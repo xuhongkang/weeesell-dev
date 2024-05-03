@@ -14,6 +14,8 @@ nvm install node
 nvm use node
 npm install --global yarn
 yarn global add @vue/cli
+yarn global add @vue/cli-service
+
 
 
 # Initialization
