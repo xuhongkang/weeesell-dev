@@ -5,14 +5,20 @@ version=4.3
 sudo yum install -y git
 sudo yum install -y maven
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-sudo yum makecache fast
+sudo yum makecache
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install node
+nvm use node
+npm install -g @vue/cli
+
 
 # Initialization
 mkdir -p /home/project
 mkdir -p /home/source
 
 # Middleware Deployment In Docker
-
 docker_code_path=/home/project/docker
 cp -r ./docker ${docker_code_path}
 sudo systemctl start docker
