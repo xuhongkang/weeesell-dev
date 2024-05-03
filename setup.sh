@@ -14,8 +14,7 @@ nvm install node
 nvm use node
 npm install --global yarn
 yarn global add @vue/cli-service --save-dev
-
-
+echo "export PATH=\"\$PATH:$(yarn global bin)\"" >> ~/.bashrc && source ~/.bashrc
 
 # Initialization
 mkdir -p /home/project
