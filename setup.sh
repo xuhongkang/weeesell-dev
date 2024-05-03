@@ -51,17 +51,16 @@ cd ${git_package_dir}
 
 # Frontend Deployment
 #代码目录
-fronted_code_path=/home/source/weeesell-ui
+frontend_code_path=/home/source/weeesell-ui
 
-cd ${fronted_code_path}
-cp -r ./weeesell-ui/ ${fronted_code_path}
-cd ${fronted_code_path}/manager
+cp -r ./weeesell-ui/ ${frontend_code_path}
+cd ${frontend_code_path}/manager
 yarn install
 yarn build
-cd ${fronted_code_path}/seller
+cd ${frontend_code_path}/seller
 yarn install
 yarn build
-cd ${fronted_code_path}/buyer
+cd ${frontend_code_path}/buyer
 yarn install
 yarn build
 cd ${git_package_dir}
