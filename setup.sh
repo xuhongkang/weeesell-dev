@@ -12,7 +12,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install node
 nvm use node
-npm install -g @vue/cli
+npm install --global yarn
+yarn global add @vue/cli
 
 
 # Initialization
