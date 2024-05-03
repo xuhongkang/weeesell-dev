@@ -22,7 +22,7 @@ mkdir -p /home/source
 
 # Middleware Deployment In Docker
 docker_code_path=/home/project/docker
-cp -r ./docker ${docker_code_path}
+yes | cp -rf ./docker ${docker_code_path}
 sudo systemctl start docker
 sudo docker-compose up -d
 cd ${git_package_dir}
@@ -30,7 +30,7 @@ cd ${git_package_dir}
 # Backend Deployment
 backend_code_path=/home/project/weeesell
 backend_run_path=/home/project/api
-cp -r ./weeesell/ ${backend_code_path}
+yes | cp -rf ./weeesell/ ${backend_code_path}
 mkdir -p ${backend_run_path}
 cd ${backend_code_path}
 mvn clean install -DskipTests
@@ -61,7 +61,7 @@ cd ${git_package_dir}
 #代码目录
 frontend_code_path=/home/source/weeesell-ui
 
-cp -r ./weeesell-ui/ ${frontend_code_path}
+yes | cp -rf ./weeesell-ui/ ${frontend_code_path}
 cd ${frontend_code_path}/manager
 yarn install
 yarn build
