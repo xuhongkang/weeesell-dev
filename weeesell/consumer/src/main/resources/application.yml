@@ -159,10 +159,10 @@ swagger:
   title: lili API接口文档
   description: lili Api Documentation
   version: 1.0.0
-  termsOfServiceUrl: https://pickmall.cn
+  termsOfServiceUrl: https://weeesell.shop
   contact:
     name: lili
-    url: https://pickmall.cn
+    url: https://weeesell.shop
     email: admin@pickmall.com
 
 # Mybatis-plus
