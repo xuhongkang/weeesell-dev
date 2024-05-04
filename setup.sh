@@ -2,11 +2,14 @@ git_package_dir=$(pwd)
 version=4.3
 node_version=14
 
+# Cleanup
+sudo systemctl disable nginx
+sudo systemctl disable docker
+sudo rm -rf /home/project >/dev/null
+sudo rm -rf /home/source >/dev/null
+sudo yum remove -y git maven yum-utils device-mapper-persistent-data lvm2 makecache yarn
+
 # Dependencies
-sudo yum install -y git
-sudo yum install -y maven
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-sudo yum makecache
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"                                                                                       
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -15,7 +18,7 @@ nvm install ${node_version}
 nvm use ${node_version}
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
-sudo yum install yarn
+sudo yum install -y git maven yum-utils device-mapper-persistent-data lvm2 makecache yarn
 
 # Initialization
 mkdir -p /home/project
