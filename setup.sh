@@ -24,6 +24,7 @@ mkdir -p /home/source
 # Middleware Docker Deplouyment
 docker_code_path=/home/project/docker
 sudo cp -rf ./docker ${docker_code_path}
+cd ${docker_code_path}
 sudo systemctl start docker
 sudo docker-compose up -d
 cd ${git_package_dir}
