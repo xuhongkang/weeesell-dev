@@ -13,6 +13,8 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 20
 nvm use 20
 npm install --global yarn
+yarn config set strict-ssl false
+yarn global add @vue/cli-plugin-babel --save-dev
 yarn global add @vue/cli-service --save-dev
 echo "export PATH=\"\$PATH:$(yarn global bin)\"" >> ~/.bashrc && source ~/.bashrc
 
@@ -22,7 +24,7 @@ mkdir -p /home/source
 
 # Middleware Deployment In Docker
 docker_code_path=/home/project/docker
-yes | cp -rf ./docker ${docker_code_path}
+sudo cp -rf ./docker ${docker_code_path}
 sudo systemctl start docker
 sudo docker-compose up -d
 cd ${git_package_dir}
@@ -30,7 +32,7 @@ cd ${git_package_dir}
 # Backend Deployment
 backend_code_path=/home/project/weeesell
 backend_run_path=/home/project/api
-yes | cp -rf ./weeesell/ ${backend_code_path}
+sudo cp -rf ./weeesell/ ${backend_code_path}
 mkdir -p ${backend_run_path}
 cd ${backend_code_path}
 mvn clean install -DskipTests
@@ -60,8 +62,7 @@ cd ${git_package_dir}
 # Frontend Deployment
 #代码目录
 frontend_code_path=/home/source/weeesell-ui
-
-yes | cp -rf ./weeesell-ui/ ${frontend_code_path}
+sudo cp -rf ./weeesell-ui/ ${frontend_code_path}
 cd ${frontend_code_path}/manager
 yarn install
 yarn build
