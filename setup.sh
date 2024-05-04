@@ -1,5 +1,6 @@
 git_package_dir=$(pwd)
 version=4.3
+node_version=14
 
 # Dependencies
 sudo yum install -y git
@@ -10,19 +11,18 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"                                                                                       
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install 20
-nvm use 20
-npm install --global yarn
-yarn config set strict-ssl false
-yarn global add @vue/cli-plugin-babel --save-dev
-yarn global add @vue/cli-service --save-dev
-echo "export PATH=\"\$PATH:$(yarn global bin)\"" >> ~/.bashrc && source ~/.bashrc
+nvm install ${node_version}
+nvm use ${node_version}
+curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
+sudo yum install yarn
+sudo yum install nginx
 
 # Initialization
 mkdir -p /home/project
 mkdir -p /home/source
 
-# Middleware Deployment In Docker
+# Middleware Docker Deplouyment
 docker_code_path=/home/project/docker
 sudo cp -rf ./docker ${docker_code_path}
 sudo systemctl start docker
@@ -73,5 +73,15 @@ cd ${frontend_code_path}/buyer
 yarn install
 yarn build
 cd ${git_package_dir}
+
+# Nginx Deployments
+cp ./ssl/* /etc/nginx/ssl/
+cd /etc/nginx/ssl/
+chmod 600 *
+cd ${git_package_dir}
+cp ./docker/nginx.conf /etc/nginx/nginx.conf
+service nginx restart
+cd ${git_package_dir}
+
 
 
