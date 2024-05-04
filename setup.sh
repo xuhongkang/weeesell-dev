@@ -54,12 +54,12 @@ mv ${backend_code_path}/seller-api/target/seller-api-$version.jar ${backend_run_
 mv ${backend_code_path}/im-api/target/im-api-$version.jar ${backend_run_path}
 cd ${backend_run_path}
 mkdir logs
-nohup java -Xmx256m -Xms128m -Xss256k -jar manager-api-$version.jar> logs/manager.out  &
-nohup java -Xmx256m -Xms128m -Xss256k -jar common-api-$version.jar> logs/common.out  &
-nohup java -Xmx256m -Xms128m -Xss256k -jar buyer-api-$version.jar> logs/buyer.out  &
-nohup java -Xmx256m -Xms128m -Xss256k -jar consumer-$version.jar> logs/consumer.out  &
-nohup java -Xmx256m -Xms128m -Xss256k -jar im-api-$version.jar> logs/im.out  &
-nohup java -Xmx256m -Xms128m -Xss256k -jar seller-api-$version.jar> logs/seller.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar manager-api-$version.jar > logs/manager.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar common-api-$version.jar > logs/common.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar buyer-api-$version.jar > logs/buyer.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar consumer-$version.jar > logs/consumer.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar im-api-$version.jar > logs/im.out  &
+nohup java -Xmx256m -Xms128m -Xss256k -jar seller-api-$version.jar > logs/seller.out  &
 cd ${git_package_dir}
 
 # Frontend Deployment
@@ -83,7 +83,7 @@ cp ./docker/nginx.conf /etc/nginx/nginx.conf
 sudo cp ./ssl/* /etc/nginx/ssl/
 cd /etc/nginx/ssl/
 sudo chmod 600 *
-service nginx restart
+sudo systemctl start nginx
 cd ${git_package_dir}
 
 
