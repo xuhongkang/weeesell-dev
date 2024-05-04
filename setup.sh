@@ -7,7 +7,7 @@ sudo systemctl disable nginx
 sudo systemctl disable docker
 sudo rm -rf /home/project >/dev/null
 sudo rm -rf /home/source >/dev/null
-sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 makecache yarn java-1.8.0
+sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 makecache yarn java-1.8.0 maven
 
 # Dependencies
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -18,7 +18,7 @@ nvm install ${node_version}
 nvm use ${node_version}
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
-sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 makecache yarn java-1.8.0
+sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 makecache yarn java-1.8.0 maven
 
 # Initialization
 mkdir -p /home/project
@@ -37,8 +37,9 @@ backend_code_path=/home/project/weeesell
 backend_run_path=/home/project/api
 sudo cp -rf ./weeesell/ ${backend_code_path}
 mkdir -p ${backend_run_path}
+chmod -R 777 ${backend_run_path}
 cd ${backend_code_path}
-mvn clean install -DskipTests
+sudo mvn clean install -DskipTests
 ps -ef |grep java |grep buyer  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
 ps -ef |grep java |grep seller  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
 ps -ef |grep java |grep manager  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
