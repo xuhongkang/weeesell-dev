@@ -63,14 +63,14 @@ cd ${git_package_dir}
 frontend_code_path=/home/source/weeesell-ui
 sudo cp -rf ./weeesell-ui/ ${frontend_code_path}
 cd ${frontend_code_path}/manager
-yarn install
-yarn build
+sudo yarn install
+sudo yarn build
 cd ${frontend_code_path}/seller
-yarn install
-yarn build
+sudo yarn install
+sudo yarn build
 cd ${frontend_code_path}/buyer
-yarn install
-yarn build
+sudo yarn install
+sudo yarn build
 cd ${git_package_dir}
 
 # Nginx Deployments
