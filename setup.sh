@@ -79,7 +79,7 @@ cd ${git_package_dir}
 
 # Nginx Deployments
 sudo yum install nginx
-cp ./docker/nginx.conf /etc/nginx/nginx.conf
+cp nginx.conf /etc/nginx/nginx.conf
 sudo cp ./ssl/* /etc/nginx/ssl/
 cd /etc/nginx/ssl/
 sudo chmod 600 *
