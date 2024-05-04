@@ -215,16 +215,16 @@ lili:
     sk: zhNKVrJK6UPOhqIjn8AQvG37b9sz6
   #域名
   domain:
-    pc: https://pc.b2b2c.pickmall.cn
-    wap: https://m.b2b2c.pickmall.cn
-    store: https://store.b2b2c.pickmall.cn
-    admin: https://admin.b2b2c.pickmall.cn
+    pc: https://pc-b2b2c.weeesell.shop
+    wap: https://m-b2b2c.weeesell.shop
+    store: https://store-b2b2c.weeesell.shop
+    admin: https://admin-b2b2c.weeesell.shop
   #api地址
   api:
-    buyer: https://buyer-api.pickmall.cn
-    common: https://common-api.pickmall.cn
-    manager: https://admin-api.pickmall.cn
-    store: https://store-api.pickmall.cn
+    buyer: https://buyer-api.weeesell.shop
+    common: https://common-api.weeesell.shop
+    manager: https://admin-api.weeesell.shop
+    store: https://store-api.weeesell.shop
 
   # jwt 细节设定
   jwt-setting:

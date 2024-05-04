@@ -210,10 +210,10 @@ lili:
     sk: zhNKVrJK6UPOhqIjn8AQvG37b9sz6
   #域名
   domain:
-    pc: https://pc.b2b2c.weeesell.shop
-    wap: https://m.b2b2c.weeesell.shop
-    store: https://store.b2b2c.weeesell.shop
-    admin: https://admin.b2b2c.weeesell.shop
+    pc: https://pc-b2b2c.weeesell.shop
+    wap: https://m-b2b2c.weeesell.shop
+    store: https://store-b2b2c.weeesell.shop
+    admin: https://admin-b2b2c.weeesell.shop
   #api地址
   api:
     buyer: https://buyer-api.weeesell.shop
