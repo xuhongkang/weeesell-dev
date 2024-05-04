@@ -16,7 +16,6 @@ nvm use ${node_version}
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
 sudo yum install yarn
-sudo yum install nginx
 
 # Initialization
 mkdir -p /home/project
@@ -75,11 +74,11 @@ yarn build
 cd ${git_package_dir}
 
 # Nginx Deployments
-cp ./ssl/* /etc/nginx/ssl/
-cd /etc/nginx/ssl/
-chmod 600 *
-cd ${git_package_dir}
+sudo yum install nginx
 cp ./docker/nginx.conf /etc/nginx/nginx.conf
+sudo cp ./ssl/* /etc/nginx/ssl/
+cd /etc/nginx/ssl/
+sudo chmod 600 *
 service nginx restart
 cd ${git_package_dir}
 
