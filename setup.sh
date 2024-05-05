@@ -6,7 +6,7 @@ sudo systemctl disable nginx
 sudo systemctl disable docker
 sudo rm -rf /home/project >/dev/null
 sudo rm -rf /home/source >/dev/null
-# sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker
+# sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker nginx
 
 # Dependencies
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -17,7 +17,7 @@ nvm install ${node_version}
 nvm use ${node_version}
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
-sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker
+sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker nginx
 sudo yum makecache
 
 # Initialization
@@ -79,7 +79,6 @@ sudo yarn build
 cd ${git_package_dir}
 
 # Nginx Deployments
-sudo yum install nginx
 cp nginx.conf /etc/nginx/nginx.conf
 sudo cp ./ssl/* /etc/nginx/ssl/
 cd /etc/nginx/ssl/
