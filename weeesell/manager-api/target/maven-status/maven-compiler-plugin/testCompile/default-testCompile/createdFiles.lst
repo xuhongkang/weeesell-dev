@@ -1,0 +1,7 @@
+cn\lili\test\rocketmq\MsgExtRocketMqTest.class
+cn\lili\test\CacheTest\CacheTest.class
+cn\lili\test\elasticsearch\EsTest.class
+cn\lili\test\promotion\SeckillTest.class
+cn\lili\test\order\OrderServiceTest.class
+cn\lili\test\promotion\FullDiscountTest.class
+cn\lili\test\promotion\CouponTest.class

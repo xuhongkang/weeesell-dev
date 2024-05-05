@@ -1,0 +1,11 @@
+cn\lili\controller\store\seat\SeatSettingStoreController.class
+cn\lili\controller\im\WebSocketServer$1.class
+cn\lili\controller\security\ImSecurityConfig.class
+cn\lili\controller\store\im\QAStoreController.class
+cn\lili\controller\im\ImTalkController.class
+cn\lili\controller\store\seat\SeatStoreController.class
+cn\lili\controller\im\ImMessageController.class
+cn\lili\controller\store\seat\SeatLogin.class
+cn\lili\controller\im\WebSocketServer.class
+cn\lili\controller\store\seat\SeatStoreManagerController.class
+cn\lili\ImApiApplication.class

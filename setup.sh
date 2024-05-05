@@ -2,6 +2,8 @@ git_package_dir=$(pwd)
 version=4.3
 node_version=14
 
+sudo su
+
 # Cleanup
 sudo systemctl disable nginx
 sudo systemctl disable docker
