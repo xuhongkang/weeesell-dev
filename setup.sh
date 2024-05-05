@@ -30,6 +30,7 @@ mkdir -p /home/source
 docker_code_path=/home/project/docker
 sudo cp -rf ./docker ${docker_code_path}
 cd ${docker_code_path}
+chmod -R 777 /home/
 sudo systemctl start docker
 sudo docker-compose up -d
 cd ${git_package_dir}
