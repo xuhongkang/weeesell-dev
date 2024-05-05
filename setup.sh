@@ -6,7 +6,7 @@ sudo systemctl disable nginx
 sudo systemctl disable docker
 sudo rm -rf /home/project >/dev/null
 sudo rm -rf /home/source >/dev/null
-sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker
+# sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker
 
 # Dependencies
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
