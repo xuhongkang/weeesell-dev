@@ -271,10 +271,10 @@ data:
       title: lilishop API接口文档
       description: lilishop Api Documentation
       version: 4.2.2
-      termsOfServiceUrl: https://weeesell.shop
+      termsOfServiceUrl: https://pickmall.cn
       contact:
         name: lili
-        url: https://weeesell.shop
+        url: https://pickmall.cn
         email: admin@pickmall.com
 
     # Mybatis-plus

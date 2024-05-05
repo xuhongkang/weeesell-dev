@@ -22,24 +22,24 @@ c58d776ac2fb   mysql:8.0.30                              "docker-entrypoint.s…
 unzip /home/project/ui/dist.zip     -d /home/project/ui/
 unzip /home/source/h5.zip     -d /home/source
 
-用户PC端：https://www.weeesell.com/   13011111111/111111
-用户手机端：https://m-b2b2c.weeesell.com/  
-商户：https://store-b2b2c.weeesell.com   13011111111/111111
-管理端：https://admin-b2b2c.weeesell.com    admin /123456
+用户PC端：https://www.weeesell.shop/   13011111111/111111
+用户手机端：https://m-b2b2c.weeesell.shop/  
+商户：https://store-b2b2c.weeesell.shop   13011111111/111111
+管理端：https://admin-b2b2c.weeesell.shop    admin /123456
 
-8.209.82.119
+52.0.215.63
 
-im-api.weeesell.com
-store-api.weeesell.com
-buyer-api.weeesell.com
-admin-api.weeesell.com
-common-api.weeesell.com
-im.weeesell.com
-im-api.weeesell.com
-m-b2b2c.weeesell.com
-store-b2b2c.weeesell.com
-admin-b2b2c.weeesell.com
-pc-b2b2c.weeesell.com
+im-api.weeesell.shop
+store-api.weeesell.shop
+buyer-api.weeesell.shop
+admin-api.weeesell.shop
+common-api.weeesell.shop
+im.weeesell.shop
+im-api.weeesell.shop
+m-b2b2c.weeesell.shop
+store-b2b2c.weeesell.shop
+admin-b2b2c.weeesell.shop
+pc-b2b2c.weeesell.shop
 
 logo
 https://lilishop-oss.oss-cn-beijing.aliyuncs.com/MANAGER//0b8505da93164d6985655bb60c95873c.png

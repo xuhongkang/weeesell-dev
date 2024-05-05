@@ -8,4 +8,4 @@ mv ${backend_code_path}/consumer/target/consumer-$version.jar ${backend_run_path
 mv ${backend_code_path}/manager-api/target/manager-api-$version.jar ${backend_run_path}
 mv ${backend_code_path}/seller-api/target/seller-api-$version.jar ${backend_run_path}
 mv ${backend_code_path}/im-api/target/im-api-$version.jar ${backend_run_path}
-scp -r ./weeesell/common-api/target/common-api-$version.jar root@8.209.82.119:/home/source
+scp -r ./weeesell.shopmon-api/target/common-api-$version.jar root@52.0.215.63:/home/source
