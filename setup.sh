@@ -20,6 +20,7 @@ curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yu
 sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
 sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker nginx
 sudo yum makecache
+yarn global add @vue/cli
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.8.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
@@ -31,8 +32,8 @@ mkdir -p /home/source
 docker_code_path=/home/project/docker
 sudo cp -rf ./docker ${docker_code_path}
 cd ${docker_code_path}
-chmod -R 777 /home/
 sudo systemctl start docker
+sudo chmod -R 777 /home/project/volumes
 sudo docker-compose up -d
 cd ${git_package_dir}
 
@@ -82,12 +83,18 @@ sudo yarn install
 sudo yarn build
 cd ${git_package_dir}
 
+# Uniapp HBuilder5 Deployment
+sudo cp ./h5 /home/source/h5
+cd ${git_package_dir}
+
 # Nginx Deployments
+nginx_ssl_dir=/etc/nginx/ssl/
+mkdir -p /etc/nginx
 cp nginx.conf /etc/nginx/nginx.conf
-sudo cp ./ssl/* /etc/nginx/ssl/
-cd /etc/nginx/ssl/
-sudo chmod 600 *
-sudo systemctl start nginx
+sudo rm -rf ${nginx_ssl_dir}
+sudo cp -r ./ssl ${nginx_ssl_dir}
+sudo chmod -R 600 ${nginx_ssl_dir}
+service nginx restart
 cd ${git_package_dir}
 
 
