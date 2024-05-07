@@ -25,9 +25,14 @@ mkdir -p /home/source
 docker_code_path=/home/project/docker
 sudo cp -rf ./docker ${docker_code_path}
 cd ${docker_code_path}
+sudo chmod -R 777 /home/project/volumes
+sudo chmod -R 777 ${docker_code_path}
 sudo systemctl start docker
 sudo chmod -R 777 /home/project/volumes
+sudo chmod -R 777 ${docker_code_path}
 sudo docker-compose up -d
+sudo chmod -R 777 /home/project/volumes
+sudo chmod -R 777 ${docker_code_path}
 cd ${git_package_dir}
 
 # Backend Deployment
@@ -37,6 +42,7 @@ sudo cp -rf ./weeesell/ ${backend_code_path}
 mkdir -p ${backend_run_path}
 chmod -R 777 ${backend_run_path}
 cd ${backend_code_path}
+
 #sudo mvn clean install -DskipTests
 ps -ef |grep java |grep buyer  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
 ps -ef |grep java |grep seller  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
