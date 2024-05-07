@@ -77,7 +77,7 @@ sudo yarn build
 cd ${git_package_dir}
 
 # Uniapp HBuilder5 Deployment
-sudo cp ./h5 /home/source/h5
+sudo cp -rf ./h5 /home/source/h5
 cd ${git_package_dir}
 
 # Nginx Deployments
