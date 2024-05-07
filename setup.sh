@@ -7,22 +7,16 @@ sudo systemctl disable docker
 sudo npm uninstall -g npm
 sudo rm -rf /home/project >/dev/null
 sudo rm -rf /home/source >/dev/null
-# sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker nginx
+#sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 java-1.8.0 maven docker nginx nodejs npm
 
 # Dependencies
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"                                                                                       
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install ${node_version}
-nvm use ${node_version}
-curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
-sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker nginx
+sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 java-1.8.0 maven docker nginx nodejs npm
+npm install -g yarn n
+n install v14.16.0
 sudo yum makecache
-yarn global add @vue/cli
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.8.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+yum update
 
 # Initialization
 mkdir -p /home/project
