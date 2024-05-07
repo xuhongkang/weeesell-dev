@@ -4,10 +4,9 @@ node_version=14
 # Cleanup
 sudo systemctl disable nginx
 sudo systemctl disable docker
-sudo npm uninstall -g npm
 sudo rm -rf /home/project >/dev/null
 sudo rm -rf /home/source >/dev/null
-#sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 java-1.8.0 maven docker nginx nodejs npm
+sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 java-1.8.0 maven docker nginx nodejs npm
 
 # Dependencies
 sudo yum install -y maven yum-utils device-mapper-persistent-data lvm2 java-1.8.0 maven docker nginx nodejs npm
@@ -86,9 +85,10 @@ nginx_ssl_dir=/etc/nginx/ssl/
 mkdir -p /etc/nginx
 cp nginx.conf /etc/nginx/nginx.conf
 sudo rm -rf ${nginx_ssl_dir}
-sudo cp -r ./ssl ${nginx_ssl_dir}
+sudo cp -rf ./ssl ${nginx_ssl_dir}
 sudo chmod -R 600 ${nginx_ssl_dir}
 service nginx restart
+sudo systemctl enable nginx
 cd ${git_package_dir}
 
 
