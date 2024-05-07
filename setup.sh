@@ -4,6 +4,7 @@ node_version=14
 # Cleanup
 sudo systemctl disable nginx
 sudo systemctl disable docker
+sudo npm uninstall -g npm
 sudo rm -rf /home/project >/dev/null
 sudo rm -rf /home/source >/dev/null
 # sudo yum remove -y maven yum-utils device-mapper-persistent-data lvm2 yarn java-1.8.0 maven docker nginx
