@@ -43,7 +43,7 @@ mkdir -p ${backend_run_path}
 chmod -R 777 ${backend_run_path}
 cd ${backend_code_path}
 
-#sudo mvn clean install -DskipTests
+sudo mvn clean install -DskipTests
 ps -ef |grep java |grep buyer  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
 ps -ef |grep java |grep seller  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
 ps -ef |grep java |grep manager  |grep -v 'grep'|awk '{print $2}'  | xargs kill -9
